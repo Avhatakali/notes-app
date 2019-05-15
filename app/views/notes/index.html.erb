@@ -1,0 +1,16 @@
+<h3>Notes</h3>
+
+<table>
+  <th>Note list</th>
+  <% @notes.each do |note|%>
+    <tr>
+      <td><%= note["content"] %></td>
+      <td><%= note["created_at"].to_date %></td>
+      <td><%= link_to "Edit", edit_note_path(note['id']) %></td>
+      <td><%= link_to "Delete", note_path(note['id']),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<p>New notes? <%= link_to "new note!", new_note_path %></p>

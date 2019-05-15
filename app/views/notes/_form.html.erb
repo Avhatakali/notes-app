@@ -1,0 +1,14 @@
+<%= form_with scope: :note,url: notes_path, local: true do |form| %>
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_field :content %>
+  </p>
+
+  <p>
+    <%= form.hidden_field :created_by %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

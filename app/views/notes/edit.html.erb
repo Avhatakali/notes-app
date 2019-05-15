@@ -1,0 +1,10 @@
+<%= form_with url: note_path(@note["id"]), method: :patch, local: true do |form| %>
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_field :content, value: @note["content"]%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
